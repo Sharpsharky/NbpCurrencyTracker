@@ -14,9 +14,9 @@ NBP Currency Tracker is a Windows Forms application that retrieves and displays 
 ## Tech stack
 
 - **C# .NET WinForms**,
-- **HTTP Client (HttpClient) for API calls**
-- **JSON (Newtonsoft.Json)**.
-- **Separation of Concerns (SRP)**
+- **HTTP Client (HttpClient) for API calls**,
+- **JSON (Newtonsoft.Json)**,
+- **Separation of Concerns (SRP)**.
 
 <br>
 <br>
