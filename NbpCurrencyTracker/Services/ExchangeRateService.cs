@@ -6,22 +6,22 @@ namespace NbpCurrencyTracker.Services
 {
     public class ExchangeRateService
     {
-        private readonly NbpApiClient _apiClient;
+        private readonly NbpApiClient apiClient;
 
         public ExchangeRateService()
         {
-            _apiClient = new NbpApiClient();
+            apiClient = new NbpApiClient();
         }
 
         public async Task<List<ExchangeRate>> GetCurrentRatesAsync()
         {
-            var tables = await _apiClient.GetCurrentRatesAsync();
+            var tables = await apiClient.GetCurrentRatesAsync();
             return ExtractRates(tables);
         }
 
         public async Task<List<ExchangeRate>> GetArchiveRatesAsync(int year, int month)
         {
-            var tables = await _apiClient.GetArchiveRatesAsync(year, month);
+            var tables = await apiClient.GetArchiveRatesAsync(year, month);
             return ExtractRates(tables);
         }
 

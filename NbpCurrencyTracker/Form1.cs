@@ -7,12 +7,12 @@ namespace NbpCurrencyTracker
 {
     public partial class Form1 : Form
     {
-        private readonly ExchangeRateService _exchangeRateService;
+        private readonly ExchangeRateService exchangeRateService;
 
         public Form1()
         {
             InitializeComponent();
-            _exchangeRateService = new ExchangeRateService();
+            exchangeRateService = new ExchangeRateService();
 
             cmbMonth.Items.AddRange(new string[]
             {
@@ -49,8 +49,8 @@ namespace NbpCurrencyTracker
             try
             {
                 var rates = isArchive
-                    ? await _exchangeRateService.GetArchiveRatesAsync(year, month)
-                    : await _exchangeRateService.GetCurrentRatesAsync();
+                    ? await exchangeRateService.GetArchiveRatesAsync(year, month)
+                    : await exchangeRateService.GetCurrentRatesAsync();
 
                 dgvRates.Rows.Clear();
 
